@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/kakadiadarpan/utility-kit.svg?branch=master)](https://travis-ci.org/kakadiadarpan/utility-kit)
+
+
+
 # Utilities
 
 <a name="typeOf"></a>
