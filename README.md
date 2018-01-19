@@ -78,16 +78,6 @@ Checks if an email is valid
 | --- | --- |
 | email | <code>String</code> |
 
-## Installation
-
-Download or clone the project and run the following command from the root directory
-
-```
-npm install utility-kit
-
-yarn add utility-kit
-```
-
 ## Build
 
 ```
