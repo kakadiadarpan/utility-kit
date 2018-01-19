@@ -1,0 +1,61 @@
+{
+  "name": "utililty-kit",
+  "version": "0.1.0",
+  "description": "A collection of tiny JavaScript utilities.",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "run-s clean && run-p build:*",
+    "build:es": "NODE_ENV=production TARGET=es rollup -c",
+    "build:umd": "NODE_ENV=production TARGET=umd rollup -c",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "author": "Darpan Kakadia <kakadiadarpan@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "json",
+    "object",
+    "array",
+    "deep",
+    "nested",
+    "path",
+    "kakadiadarpan",
+    "javascript",
+    "type",
+    "collection",
+    "function",
+    "util",
+    "utils",
+    "string",
+    "empty",
+    "map"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "npm-run-all": "^4.1.2",
+    "rollup": "^0.52.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-conditional": "^1.1.1",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-filesize": "^1.5.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-plugin-uglify-es": "^0.0.1"
+  },
+  "dependencies": {}
+}
