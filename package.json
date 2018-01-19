@@ -2,6 +2,7 @@
   "name": "utililty-kit",
   "version": "0.1.1",
   "description": "A collection of tiny JavaScript utilities.",
+  "repository": "https://github.com/kakadiadarpan/utility-kit.git",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
