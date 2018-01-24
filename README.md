@@ -4,6 +4,8 @@
 
 # Utilities
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kakadiadarpan/utility-kit.svg)](https://greenkeeper.io/)
+
 <a name="typeOf"></a>
 
 ## typeOf ⇒ <code>String</code>
