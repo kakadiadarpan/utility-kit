@@ -1,10 +1,8 @@
 [![Build Status](https://travis-ci.org/kakadiadarpan/utility-kit.svg?branch=master)](https://travis-ci.org/kakadiadarpan/utility-kit)
-
+[![Greenkeeper badge](https://badges.greenkeeper.io/kakadiadarpan/utility-kit.svg)](https://greenkeeper.io/)
 
 
 # Utilities
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/kakadiadarpan/utility-kit.svg)](https://greenkeeper.io/)
 
 <a name="typeOf"></a>
 

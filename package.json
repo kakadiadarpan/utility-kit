@@ -10,7 +10,8 @@
     "build": "run-s clean && run-p build:*",
     "build:es": "NODE_ENV=production TARGET=es rollup -c",
     "build:umd": "NODE_ENV=production TARGET=umd rollup -c",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "bundlesize": "bundlesize"
   },
   "lint-staged": {
     "*.js": [
