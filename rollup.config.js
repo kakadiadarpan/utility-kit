@@ -10,14 +10,14 @@ const pkg = require("./package.json");
 console.log("version ", pkg.version);
 
 export default {
-  name: "Utils",
   input: "src/index.js",
   output: {
     file: {
       es: pkg.module,
       umd: pkg.main
     }[TARGET],
-    format: TARGET
+    format: TARGET,
+    name: "utility-kit"
   },
   plugins: [
     eslint({
