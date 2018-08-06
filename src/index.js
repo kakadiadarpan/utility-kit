@@ -6,7 +6,7 @@
  */
 export const typeOf = (obj) => {
   let dataType = typeof obj;
-  const constructorName = value => (value.constructor.name);
+  const constructorName = value => value.constructor.name;
   dataType = constructorName(obj).toLowerCase();
   return dataType;
 };
@@ -23,43 +23,43 @@ export const isEmpty = (obj) => {
     return true;
   }
 
-  const isDate = value => (typeOf(value) === "date");
-  const isBoolean = value => (typeOf(value) === "boolean");
+  const isDate = value => typeOf(value) === "date";
+  const isBoolean = value => typeOf(value) === "boolean";
 
   if (isDate(obj) || isBoolean(obj)) {
     return false;
   }
 
-  const isFunction = value => (typeOf(value) === "function");
+  const isFunction = value => typeOf(value) === "function";
 
   if (isFunction(obj)) {
     return obj.length === 0;
   }
 
-  const isError = value => (typeOf(value) === "error");
+  const isError = value => typeOf(value) === "error";
   if (isError(obj)) {
     return obj.message === "";
   }
-  const isSet = value => (typeOf(value) === "set");
-  const isMap = value => (typeOf(value) === "map");
-  const isFile = value => (typeOf(value) === "file");
+  const isSet = value => typeOf(value) === "set";
+  const isMap = value => typeOf(value) === "map";
+  const isFile = value => typeOf(value) === "file";
 
   if (isSet(obj) || isMap(obj) || isFile(obj)) {
     return obj.size === 0;
   }
 
-  const isNumber = value => (typeOf(value) === "number");
+  const isNumber = value => typeOf(value) === "number";
 
   if (isNumber(obj)) {
     return Number.isNaN(obj);
   }
 
-  const isArray = value => (Array.isArray(value));
+  const isArray = value => Array.isArray(value);
   if (isArray(obj)) {
     return obj.length === 0;
   }
 
-  const isObject = value => (typeOf(value) === "object");
+  const isObject = value => typeOf(value) === "object";
   if (isObject(obj)) {
     const keys = Object.keys(obj);
     for (let i = 0, key = keys[i]; i < keys.length; i += 1) {
@@ -80,7 +80,7 @@ export const isEmpty = (obj) => {
  */
 export const deepPath = (path, object) => {
   const reducerFunction = (data, key) => {
-    return (data && ["null", "undefined"].indexOf(typeOf(data[key])) === -1) ? data[key] : null;
+    return data && ["null", "undefined"].indexOf(typeOf(data[key])) === -1 ? data[key] : null;
   };
   return path.reduce(reducerFunction, object);
 };
@@ -108,9 +108,7 @@ export const mapOnObject = (object, iteratee) => {
  * @param  {String} suffix
  * @return {String}
  */
-export const pluralize = (count, text, suffix = "s") => (
-  count === 1 ? text : `${text}${suffix}`
-);
+export const pluralize = (count, text, suffix = "s") => (count === 1 ? text : `${text}${suffix}`);
 
 /**
  * Changes a given string to sentence case.
@@ -119,7 +117,12 @@ export const pluralize = (count, text, suffix = "s") => (
  * @return {String}
  */
 export const toProperCase = (str) => {
-  return str && str.replace(/\w\S*/g, (txt) => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+  return (
+    str
+    && str.replace(/\w\S*/g, (txt) => {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    })
+  );
 };
 
 /**
@@ -131,17 +134,28 @@ export const toProperCase = (str) => {
  * @return {Any}
  */
 export const safeInvoke = (func = undefined, ...args) => {
-  const isFunction = value => (typeOf(func) === "function");
+  const isFunction = value => typeOf(func) === "function";
   return isFunction(func) && func(...args);
 };
 
 /**
  * Checks if an email is valid
  *
- * @param  {String} email
- * @return {Boolean}
+ * @param  {String} Email to be checked for validation
+ * @return {Boolean} Returns true if valid, false otherwise
  */
 export const isValidEmail = (email) => {
   const pattern = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
   return pattern.test(email);
 };
+
+/**
+ * Recursively flattens array.
+ *
+ * @param  {Array} The array to flatten.
+ * @return {Array} Returns the new flattened array.
+ */
+export const flatten = nestedArray => nestedArray.reduce(
+  (flattenedArray, item) => flattenedArray.concat(Array.isArray(item) ? flatten(item) : [item]),
+  []
+);
