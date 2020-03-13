@@ -45,7 +45,7 @@
     "babel-preset-env": "^1.7.0",
     "bundlesize": "^0.17.0",
     "eslint": "^5.0.0",
-    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.13.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
